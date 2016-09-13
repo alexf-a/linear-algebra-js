@@ -8,7 +8,7 @@ class Matrix{
 		var l = values[0].length;
 		for (var i = 0; i < l.length; i++){
 			if (values[i].length != l){
-				throw new DimensionError("Cannot build a Matrix with inconsistent dimensions";
+				throw new DimensionError("Cannot build a Matrix with inconsistent dimensions");
 			}
 		}
 		this.values = values;
@@ -29,7 +29,7 @@ class Matrix{
 	
 	/*
 	 * Multiplies this matrix by scalar a.
-	 * @param {Integer|Float} aa Scalar to multiply by.
+	 * @param {Integer|Float} a - Scalar to multiply by.
 	 */
 	scalarMultiply(a){
 		for (var i = 0; i < this.values.length; i++){
@@ -68,11 +68,11 @@ class Matrix{
 	}
 	
 	/**
-	 * return column of this Matrix as a Vector. 
+	 * returns column of this Matrix as a Vector. 
 	 * Assumign j > 0.
-	 * @return Vector column j of this Matrix.
-	 * @param int j the index of the column.
-	 * @throws OutOfBoundsException if j < 1. 
+	 * @return {Vector} column j of this Matrix.
+	 * @param {Integer} j the index of the column.
+	 * @throws {RangeError} if j < 1. 
 	 */
 	getColumn(j){
 		if (j < 1 || j > this.numColumns){
@@ -88,9 +88,9 @@ class Matrix{
 	/**
 	 * Returns element at row i, column j of this Matrix.
 	 * Assuming i, j > 0. In other words, using Linear Algebra indexing.
-	 * @return int|float element at row i, column j.
-	 * @param int i
-	 * @param int j
+	 * @return {(Integer|Float)} element at row i, column j.
+	 * @param {Integer} i
+	 * @param {Integer} j
 	 */
 	getCell(i, j){
 		if (i < 1 || j < 1){
@@ -102,9 +102,9 @@ class Matrix{
 	/**
 	 * Sets the cell at row i, column j to val of this Matrix.
 	 * Assuming i, j > 0. In other words, using Linear Algebra indexing.
-	 * @param int i
-	 * @param int j
-	 * @param int val new value at row i, col j.
+	 * @param {Integer} i
+	 * @param {Integer} j
+	 * @param {Integer} val new value at row i, col j.
 	 */
 	setCell(i, j, val){
 		if (i < 1 || j < 1){
@@ -115,7 +115,7 @@ class Matrix{
 	
 	/**
 	 * Sets row i to row.
-	 * @param int i The index of row to change.
+	 * @param {Integer} i The index of row to change.
 	 * @param {(Integer[]|Float[]|Vector)} row Values to change row to.
 	 */
 	setRow(i, row){
@@ -184,7 +184,7 @@ class Matrix{
 			throw new DimensionError("Matrix multiplication failed because of mismatched dimensions");
 		}
 	
-		for(i = 1; i <= m; i++){
+		for(var i = 1; i <= m; i++){
 			var row = [];
 			for(j = 1; j <= q; j++){
 				row.push(dotProduct(
