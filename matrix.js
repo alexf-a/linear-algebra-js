@@ -2,7 +2,7 @@
  * A class to represent a matrix math structure. 
  * NOTE: To use math notational indexing, use custom setters and getters.
  */
-class Matrix{
+module.exports = class Matrix{
 
 	constructor(values){
 		var l = values[0].length;

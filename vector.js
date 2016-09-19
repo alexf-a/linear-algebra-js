@@ -2,7 +2,7 @@
  * A class to represent a vector math structure.
  * NOTE: Indices begin at 1 (as is conventional in math). 
  */
-class Vector {
+module.exports =  class Vector {
 	
 	/**
 	 * Construct a new Vector with values as its point. 
